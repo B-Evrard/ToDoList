@@ -4,6 +4,7 @@ final class ToDoListViewModel: ObservableObject {
     // MARK: - Private properties
 
     private let repository: ToDoListRepositoryType
+    private var isFilter = false
 
     // MARK: - Init
 
@@ -17,7 +18,10 @@ final class ToDoListViewModel: ObservableObject {
     /// Publisher for the list of to-do items.
     @Published var toDoItems: [ToDoItem] = [] {
         didSet {
-            repository.saveToDoItems(toDoItems)
+            if (!isFilter) {
+                repository.saveToDoItems(toDoItems)
+            }
+               
         }
     }
 
@@ -43,5 +47,16 @@ final class ToDoListViewModel: ObservableObject {
     /// Apply the filter to update the list.
     func applyFilter(at index: Int) {
         // TODO: - Implement the logic for filtering
+        isFilter = true
+        self.toDoItems = repository.loadToDoItems()
+        switch index {
+        case 1:
+            toDoItems.removeAll ( where: { !$0.isDone })
+        case 2:
+            toDoItems.removeAll ( where: { $0.isDone })
+        default :
+            break
+        }
+        isFilter = false
     }
 }

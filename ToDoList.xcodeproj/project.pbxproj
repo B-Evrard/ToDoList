@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2F5B3B742AC430FA0033E479 /* ToDoListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5B3B732AC430FA0033E479 /* ToDoListViewModelTests.swift */; };
 		2F5B3B7B2AC431A00033E479 /* MockToDoListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5B3B7A2AC431A00033E479 /* MockToDoListRepository.swift */; };
 		2F90C7E12AC357C6005D888A /* ToDoListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F90C7E02AC357C6005D888A /* ToDoListApp.swift */; };
 		2F90C7E32AC357C6005D888A /* ToDoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F90C7E22AC357C6005D888A /* ToDoListView.swift */; };
@@ -17,6 +16,7 @@
 		2F90C7F12AC358B4005D888A /* ToDoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F90C7F02AC358B4005D888A /* ToDoItem.swift */; };
 		2F90C7F32AC358DB005D888A /* ToDoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F90C7F22AC358DB005D888A /* ToDoListViewModel.swift */; };
 		2F938E8F2AC580DF00E828F4 /* Readme.md in Resources */ = {isa = PBXBuildFile; fileRef = 2F938E8E2AC580DF00E828F4 /* Readme.md */; };
+		FE87B0E82C8069D9000043E1 /* ToDoListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5B3B732AC430FA0033E479 /* ToDoListViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +43,7 @@
 		2F90C7F02AC358B4005D888A /* ToDoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItem.swift; sourceTree = "<group>"; };
 		2F90C7F22AC358DB005D888A /* ToDoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListViewModel.swift; sourceTree = "<group>"; };
 		2F938E8E2AC580DF00E828F4 /* Readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
+		FE87B0E92C80702C000043E1 /* ToDoList.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = ToDoList.xctestplan; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +106,7 @@
 		2F90C7D42AC357C6005D888A = {
 			isa = PBXGroup;
 			children = (
+				FE87B0E92C80702C000043E1 /* ToDoList.xctestplan */,
 				2F938E8E2AC580DF00E828F4 /* Readme.md */,
 				2F90C7DF2AC357C6005D888A /* ToDoList */,
 				2F5B3B722AC430FA0033E479 /* ToDoListTests */,
@@ -184,7 +186,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1420;
-				LastUpgradeCheck = 1420;
+				LastUpgradeCheck = 1540;
 				TargetAttributes = {
 					2F5B3B702AC430FA0033E479 = {
 						CreatedOnToolsVersion = 14.2;
@@ -239,7 +241,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2F5B3B742AC430FA0033E479 /* ToDoListViewModelTests.swift in Sources */,
+				FE87B0E82C8069D9000043E1 /* ToDoListViewModelTests.swift in Sources */,
 				2F5B3B7B2AC431A00033E479 /* MockToDoListRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -305,6 +307,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -337,6 +340,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -351,7 +355,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -365,6 +369,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -397,6 +402,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -405,7 +411,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -429,7 +435,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -457,7 +463,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
