@@ -5,7 +5,7 @@ struct ToDoListView: View {
     @State private var newTodoTitle = ""
     @State private var isShowingAlert = false
     @State private var isAddingTodo = false
-    
+   
     // New state for filter index
     @State private var filterIndex = 0
     
@@ -13,10 +13,27 @@ struct ToDoListView: View {
         NavigationView {
             VStack {
                 // Filter selector
-                // TODO: - Add a filter selector which will call the viewModel for updating the displayed data
+                Picker("Picker",
+                       selection: $filterIndex) {
+                    Text("All")
+                        .tag(0)
+                    Text("Done")
+                        .tag(1)
+                    Text("Not Done")
+                        .tag(2)
+                }.pickerStyle(.segmented)
+                    .frame(height: 50)
+                    .onChange(of: filterIndex) {  oldValue,newValue in
+                        viewModel.applyFilter(at: newValue)
+                    }
+                  
+                
+               
+                
                 // List of tasks
                 List {
-                    ForEach(viewModel.toDoItems) { item in
+                    ForEach(viewModel.toDoItems.filter( {viewModel.isRendered(isDone: $0.isDone )})) { item in
+                        
                         HStack {
                             Button(action: {
                                 viewModel.toggleTodoItemCompletion(item)
@@ -30,7 +47,8 @@ struct ToDoListView: View {
                                 .font(item.isDone ? .subheadline : .body)
                                 .strikethrough(item.isDone)
                                 .foregroundColor(item.isDone ? .gray : .primary)
-                        }
+                            }
+                    
                     }
                     .onDelete { indices in
                         indices.forEach { index in
@@ -94,6 +112,8 @@ struct ToDoListView: View {
         }
     }
 }
+
+
 
 struct ToDoListView_Previews: PreviewProvider {
     static var previews: some View {
