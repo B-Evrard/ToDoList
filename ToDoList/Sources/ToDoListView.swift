@@ -25,15 +25,11 @@ struct ToDoListView: View {
                     .frame(height: 50)
                     .onChange(of: filterIndex) {  oldValue,newValue in
                         viewModel.applyFilter(at: newValue)
-                    }
-                  
-                
-               
+                }.padding()
                 
                 // List of tasks
                 List {
-                    ForEach(viewModel.toDoItems.filter( {viewModel.isRendered(isDone: $0.isDone )})) { item in
-                        
+                    ForEach(viewModel.toDoItems) { item in
                         HStack {
                             Button(action: {
                                 viewModel.toggleTodoItemCompletion(item)
