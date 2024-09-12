@@ -11,7 +11,8 @@ final class ToDoListViewModel: ObservableObject {
     init(repository: ToDoListRepositoryType) {
         self.repository = repository
         self.toDoItems = repository.loadToDoItems()
-        self.toDoItemsWork = clone(todoItemsOriginal: toDoItems)
+        //self.toDoItemsWork = clone(todoItemsOriginal: toDoItems)
+        self.toDoItemsWork = toDoItems
     }
 
     // MARK: - Outputs
@@ -65,7 +66,7 @@ final class ToDoListViewModel: ObservableObject {
     func applyFilter(at index: Int) {
         
         self.toDoItems = repository.loadToDoItems()
-        self.toDoItemsWork =  clone(todoItemsOriginal: self.toDoItems)
+        self.toDoItemsWork =  toDoItems
         switch index {
         case 1:
             toDoItems.removeAll(where: {!$0.isDone})
@@ -78,16 +79,6 @@ final class ToDoListViewModel: ObservableObject {
        
     }
     
-    /// Clone TodoItems array
-    /// - Parameter todoItems: TodoItems Array
-    /// - Returns: clone of TodoItems
-    func clone(todoItemsOriginal todoItems: Array<ToDoItem>) -> Array<ToDoItem> {
-        var toDoItemsClone: [ToDoItem] = []
-        for element in todoItems {
-            toDoItemsClone.append(element.copy())
-        }
-        return toDoItemsClone
-    }
     
 }
 
