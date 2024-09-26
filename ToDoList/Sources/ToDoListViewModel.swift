@@ -11,7 +11,6 @@ final class ToDoListViewModel: ObservableObject {
     init(repository: ToDoListRepositoryType) {
         self.repository = repository
         self.toDoItems = repository.loadToDoItems()
-        //self.toDoItemsWork = clone(todoItemsOriginal: toDoItems)
         self.toDoItemsWork = toDoItems
     }
 
@@ -31,7 +30,7 @@ final class ToDoListViewModel: ObservableObject {
     // Add a new to-do item with priority and category
     func add(item: ToDoItem) {
         toDoItems.append(item)
-        toDoItemsWork.append(item.copy())
+        toDoItemsWork.append(item)
         if (filterindex == 1) {
             applyFilter(at: filterindex)
         }
@@ -66,11 +65,11 @@ final class ToDoListViewModel: ObservableObject {
     func applyFilter(at index: Int) {
         
         self.toDoItems = repository.loadToDoItems()
-        self.toDoItemsWork =  toDoItems
+        self.toDoItemsWork = toDoItems
         switch index {
-        case 1:
+        case 1: // to-do item completed
             toDoItems.removeAll(where: {!$0.isDone})
-        case 2:
+        case 2: // to-do item not completed
             toDoItems.removeAll(where: {$0.isDone})
         default:
            break

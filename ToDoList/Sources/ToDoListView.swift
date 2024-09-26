@@ -2,7 +2,7 @@ import SwiftUI
 
 struct ToDoListView: View {
     @ObservedObject var viewModel: ToDoListViewModel
-    @State private var newTodoTitle = ""
+    @State private var newTodoTitle = "test"
     @State private var isShowingAlert = false
     @State private var isAddingTodo = false
    
@@ -59,6 +59,7 @@ struct ToDoListView: View {
                     HStack {
                         TextField("Enter Task Title", text: $newTodoTitle)
                             .padding(.leading)
+                            .foregroundColor(.black)
 
                         Spacer()
                         
